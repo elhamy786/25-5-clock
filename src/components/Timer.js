@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   startStop,
@@ -10,6 +10,7 @@ import {
 const Timer = () => {
   const dispatch = useDispatch();
   const { timeLeft, timerLabel, isRunning } = useSelector((state) => state);
+  const beepRef = useRef(null); // Create a ref for the audio element
 
   // Handle timer ticking and switching between session and break
   useEffect(() => {
@@ -17,7 +18,11 @@ const Timer = () => {
     if (isRunning && timeLeft > 0) {
       timerId = setInterval(() => dispatch(tick()), 1000);
     } else if (timeLeft === 0) {
-      document.getElementById('beep').play(); // Play beep sound
+      if (beepRef.current) { // eslint-disable-next-line arrow-parens
+        beepRef.current.play().catch(error => {
+          console.error('Audio play failed: ', error);
+        });
+      }
       dispatch(toggleSessionBreak()); // Switch between session and break
     }
     return () => clearInterval(timerId);
@@ -31,9 +36,10 @@ const Timer = () => {
   };
 
   const resetTimer = () => {
-    const beepAudio = document.getElementById('beep');
-    beepAudio.pause();
-    beepAudio.currentTime = 0; // Rewind the audio to the start
+    if (beepRef.current) {
+      beepRef.current.pause();
+      beepRef.current.currentTime = 0; // Rewind the audio to the start
+    }
     dispatch(reset());
   };
 
@@ -52,7 +58,12 @@ const Timer = () => {
         Reset
       </button>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio id="beep" src="https://bigsoundbank.com/UPLOAD/mp3/0001.mp3"></audio>
+      <audio
+        id="beep"
+        ref={beepRef}
+        src="https://bigsoundbank.com/UPLOAD/mp3/0001.mp3"
+        preload="auto" // Ensures the audio is loaded when the page loads
+      />
     </div>
   );
 };
