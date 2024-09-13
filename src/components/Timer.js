@@ -19,7 +19,7 @@ const Timer = () => {
       timerId = setInterval(() => dispatch(tick()), 1000);
     } else if (timeLeft === 0) {
       if (beepRef.current) { // eslint-disable-next-line arrow-parens
-        beepRef.current.play().catch(error => {
+        beepRef.current.play().catch(error => { // eslint-disable-next-line no-console
           console.error('Audio play failed: ', error);
         });
       }
