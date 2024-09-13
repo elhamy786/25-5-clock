@@ -9,10 +9,22 @@ const BreakControls = () => {
   return (
     <div>
       <h2 id="break-label">Break Length</h2>
-      <button id="break-decrement" type="button" onClick={() => dispatch(decrementBreak())}>-</button>
+      <button
+        id="break-decrement"
+        type="button"
+        onClick={() => dispatch(decrementBreak())}
+      >
+        -
+      </button>
       {/* Added type="button" */}
       <span id="break-length">{breakLength}</span>
-      <button id="break-increment" type="button" onClick={() => dispatch(incrementBreak())}>+</button>
+      <button
+        id="break-increment"
+        type="button"
+        onClick={() => dispatch(incrementBreak())}
+      >
+        +
+      </button>
       {/* Added type="button" */}
     </div>
   );

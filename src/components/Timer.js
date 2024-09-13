@@ -9,11 +9,7 @@ import {
 
 const Timer = () => {
   const dispatch = useDispatch();
-  const {
-    timeLeft,
-    timerLabel,
-    isRunning,
-  } = useSelector((state) => state);
+  const { timeLeft, timerLabel, isRunning } = useSelector((state) => state);
 
   // Handle timer ticking and switching between session and break
   useEffect(() => {
@@ -45,7 +41,11 @@ const Timer = () => {
     <div>
       <h2 id="timer-label">{timerLabel}</h2>
       <div id="time-left">{formatTime(timeLeft)}</div>
-      <button id="start_stop" type="button" onClick={() => dispatch(startStop())}>
+      <button
+        id="start_stop"
+        type="button"
+        onClick={() => dispatch(startStop())}
+      >
         {isRunning ? 'Pause' : 'Start'}
       </button>
       <button id="reset" type="button" onClick={resetTimer}>

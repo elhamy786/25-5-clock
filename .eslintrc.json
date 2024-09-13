@@ -32,7 +32,8 @@
       "namedComponents": "arrow-function",
       "unnamedComponents": "arrow-function"
     }],
-    "arrow-body-style": [2, "as-needed"]
+    "arrow-body-style": [2, "as-needed"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
   },
   "overrides": [
     {

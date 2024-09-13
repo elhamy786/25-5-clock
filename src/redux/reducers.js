@@ -6,7 +6,7 @@ const initialState = {
   isRunning: false,
   isSession: true, // Determines if it's session or break
 };
-
+/* eslint-disable default-param-last */
 function clockReducer(state = initialState, action) {
   switch (action.type) {
     case 'INCREMENT_BREAK':
@@ -25,7 +25,9 @@ function clockReducer(state = initialState, action) {
       return {
         ...state,
         sessionLength: Math.min(state.sessionLength + 1, 60),
-        timeLeft: !state.isRunning ? (state.sessionLength + 1) * 60 : state.timeLeft,
+        timeLeft: !state.isRunning
+          ? (state.sessionLength + 1) * 60
+          : state.timeLeft,
         // Update timeLeft only if not running
       };
 
@@ -33,7 +35,9 @@ function clockReducer(state = initialState, action) {
       return {
         ...state,
         sessionLength: Math.max(state.sessionLength - 1, 1),
-        timeLeft: !state.isRunning ? (state.sessionLength - 1) * 60 : state.timeLeft,
+        timeLeft: !state.isRunning
+          ? (state.sessionLength - 1) * 60
+          : state.timeLeft,
         // Update timeLeft only if not running
       };
 
@@ -56,7 +60,9 @@ function clockReducer(state = initialState, action) {
           ...state,
           isSession: !state.isSession,
           timerLabel: state.isSession ? 'Break' : 'Session',
-          timeLeft: state.isSession ? state.breakLength * 60 : state.sessionLength * 60,
+          timeLeft: state.isSession
+            ? state.breakLength * 60
+            : state.sessionLength * 60,
         };
       }
       return {
@@ -69,7 +75,9 @@ function clockReducer(state = initialState, action) {
         ...state,
         isSession: !state.isSession,
         timerLabel: state.isSession ? 'Break' : 'Session',
-        timeLeft: state.isSession ? state.breakLength * 60 : state.sessionLength * 60,
+        timeLeft: state.isSession
+          ? state.breakLength * 60
+          : state.sessionLength * 60,
       };
 
     default:
