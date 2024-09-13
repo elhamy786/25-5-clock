@@ -1,10 +1,10 @@
 const initialState = {
   breakLength: 5,
   sessionLength: 25,
-  timeLeft: 1500,
+  timeLeft: 1500, // 25 minutes in seconds (session length)
   timerLabel: 'Session',
   isRunning: false,
-  isSession: true,
+  isSession: true, // Determines if it's session or break
 };
 
 function clockReducer(state = initialState, action) {
@@ -25,14 +25,14 @@ function clockReducer(state = initialState, action) {
       return {
         ...state,
         sessionLength: Math.min(state.sessionLength + 1, 60),
-        imeLeft: !state.isRunning ? (state.sessionLength + 1) * 60 : state.timeLeft,
+        timeLeft: !state.isRunning ? (state.sessionLength + 1) * 60 : state.timeLeft, // Update timeLeft only if not running
       };
 
     case 'DECREMENT_SESSION':
       return {
         ...state,
         sessionLength: Math.max(state.sessionLength - 1, 1),
-        timeLeft: !state.isRunning ? (state.sessionLength - 1) * 60 : state.timeLeft,
+        timeLeft: !state.isRunning ? (state.sessionLength - 1) * 60 : state.timeLeft, // Update timeLeft only if not running
       };
 
     case 'START_STOP':
@@ -44,10 +44,11 @@ function clockReducer(state = initialState, action) {
     case 'RESET':
       return {
         ...initialState,
-        timeLeft: initialState.sessionLength * 60,
+        timeLeft: initialState.sessionLength * 60, // Ensure timeLeft is reset properly
       };
 
     case 'TICK':
+      // If timeLeft reaches 0, trigger toggle between session/break
       if (state.timeLeft === 0) {
         return {
           ...state,
@@ -58,7 +59,7 @@ function clockReducer(state = initialState, action) {
       }
       return {
         ...state,
-        timeLeft: state.timeLeft - 1 > 0 ? state.timeLeft - 1 : 0,
+        timeLeft: state.timeLeft - 1 > 0 ? state.timeLeft - 1 : 0, // Prevent negative timeLeft
       };
 
     case 'TOGGLE_SESSION_BREAK':

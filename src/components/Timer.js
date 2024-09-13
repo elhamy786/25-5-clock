@@ -6,17 +6,19 @@ const Timer = () => {
   const dispatch = useDispatch();
   const { timeLeft, timerLabel, isRunning, isSession, sessionLength, breakLength } = useSelector(state => state);
 
+  // Handle timer ticking and switching between session and break
   useEffect(() => {
     let timerId;
     if (isRunning && timeLeft > 0) {
       timerId = setInterval(() => dispatch(tick()), 1000);
     } else if (timeLeft === 0) {
-      document.getElementById('beep').play();
-      dispatch(toggleSessionBreak());
+      document.getElementById('beep').play(); // Play beep sound
+      dispatch(toggleSessionBreak()); // Switch between session and break
     }
     return () => clearInterval(timerId);
   }, [timeLeft, isRunning, dispatch]);
 
+  // Format time into mm:ss format
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
@@ -26,7 +28,7 @@ const Timer = () => {
   const resetTimer = () => {
     const beepAudio = document.getElementById('beep');
     beepAudio.pause();
-    beepAudio.currentTime = 0;
+    beepAudio.currentTime = 0; // Rewind the audio to the start
     dispatch(reset());
   };
 
