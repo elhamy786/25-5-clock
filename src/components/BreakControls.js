@@ -4,7 +4,7 @@ import { incrementBreak, decrementBreak } from '../redux/actions';
 
 const BreakControls = () => {
   const dispatch = useDispatch();
-  const breakLength = useSelector(state => state.breakLength); // Added parentheses around 'state'
+  const breakLength = useSelector((state) => state.breakLength);
 
   return (
     <div>
