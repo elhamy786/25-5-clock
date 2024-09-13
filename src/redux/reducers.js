@@ -25,14 +25,16 @@ function clockReducer(state = initialState, action) {
       return {
         ...state,
         sessionLength: Math.min(state.sessionLength + 1, 60),
-        timeLeft: !state.isRunning ? (state.sessionLength + 1) * 60 : state.timeLeft, // Update timeLeft only if not running
+        timeLeft: !state.isRunning ? (state.sessionLength + 1) * 60 : state.timeLeft,
+        // Update timeLeft only if not running
       };
 
     case 'DECREMENT_SESSION':
       return {
         ...state,
         sessionLength: Math.max(state.sessionLength - 1, 1),
-        timeLeft: !state.isRunning ? (state.sessionLength - 1) * 60 : state.timeLeft, // Update timeLeft only if not running
+        timeLeft: !state.isRunning ? (state.sessionLength - 1) * 60 : state.timeLeft,
+        // Update timeLeft only if not running
       };
 
     case 'START_STOP':
