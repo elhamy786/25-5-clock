@@ -42,41 +42,41 @@ body {
   100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
 }
   
-  #time-left {
-    animation: glow 2s infinite alternate;
-  }
-  
-  /* Label Styles */
-  #timer-label, #break-label, #session-label {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 10px 0;
-  }
-  
-  /* Magical Buttons */
-  button {
-    background: linear-gradient(45deg, #ff6f61, #ff9478);
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 5px;
-    border-radius: 30px;
-    box-shadow: 0 0 20px rgba(255, 105, 135, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
-    transition: background 0.5s ease, transform 0.2s ease;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: linear-gradient(45deg, #ff9478, #ff6f61);
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
-  }
+#time-left {
+  animation: glow 2s infinite alternate;
+}
+
+#timer-label,
+#break-label,
+#session-label {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+button {
+  background: linear-gradient(45deg, #ff6f61, #ff9478);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 5px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(255, 105, 135, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+  transition: background 0.5s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff9478, #ff6f61);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
 
 #break-length,
 #session-length {
