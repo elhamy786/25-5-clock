@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { 
+import {
   startStop,
   reset,
   tick,
-  toggleSessionBreak
+  toggleSessionBreak,
 } from '../redux/actions';
 
 const Timer = () => {
   const dispatch = useDispatch();
-  const { 
+  const {
     timeLeft,
     timerLabel,
-    isRunning
+    isRunning,
   } = useSelector((state) => state);
 
   // Handle timer ticking and switching between session and break
@@ -45,12 +45,13 @@ const Timer = () => {
     <div>
       <h2 id="timer-label">{timerLabel}</h2>
       <div id="time-left">{formatTime(timeLeft)}</div>
-      <button id="start_stop" onClick={() => dispatch(startStop())}>
+      <button id="start_stop" type="button" onClick={() => dispatch(startStop())}>
         {isRunning ? 'Pause' : 'Start'}
       </button>
-      <button id="reset" onClick={resetTimer}>
+      <button id="reset" type="button" onClick={resetTimer}>
         Reset
       </button>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio id="beep" src="https://bigsoundbank.com/UPLOAD/mp3/0001.mp3" />
     </div>
   );
