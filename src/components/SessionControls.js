@@ -9,16 +9,16 @@ const SessionControls = () => {
   return (
     <div>
       <h2 id="session-label">Session Length</h2>
-      <button 
-        id="session-decrement" 
+      <button
+        id="session-decrement"
         type="button" // Added type="button"
         onClick={() => dispatch(decrementSession())}
       >
         -
       </button>
       <span id="session-length">{sessionLength}</span>
-      <button 
-        id="session-increment" 
+      <button
+        id="session-increment"
         type="button" // Added type="button"
         onClick={() => dispatch(incrementSession())}
       >

@@ -56,23 +56,22 @@ function clockReducer(state = initialState, action) {
           timeLeft: state.isSession ? state.breakLength * 60 : state.sessionLength * 60,
         };
       }
-        return {
-          ...state,
-          timeLeft: state.timeLeft - 1 > 0 ? state.timeLeft - 1 : 0,
-        };
-  
-      case 'TOGGLE_SESSION_BREAK':
-        return {
-          ...state,
-          isSession: !state.isSession,
-          timerLabel: state.isSession ? 'Break' : 'Session',
-          timeLeft: state.isSession ? state.breakLength * 60 : state.sessionLength * 60,
-        };
-  
-      default:
-        return state;
-    }
+      return {
+        ...state,
+        timeLeft: state.timeLeft - 1 > 0 ? state.timeLeft - 1 : 0,
+      };
+
+    case 'TOGGLE_SESSION_BREAK':
+      return {
+        ...state,
+        isSession: !state.isSession,
+        timerLabel: state.isSession ? 'Break' : 'Session',
+        timeLeft: state.isSession ? state.breakLength * 60 : state.sessionLength * 60,
+      };
+
+    default:
+      return state;
   }
-  
-  export default clockReducer;
-  
+}
+
+export default clockReducer;
