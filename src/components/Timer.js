@@ -1,10 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { startStop, reset, tick, toggleSessionBreak } from '../redux/actions';
+import { 
+  startStop,
+  reset,
+  tick,
+  toggleSessionBreak
+} from '../redux/actions';
 
 const Timer = () => {
   const dispatch = useDispatch();
-  const { timeLeft, timerLabel, isRunning, isSession, sessionLength, breakLength } = useSelector(state => state);
+  const { 
+    timeLeft,
+    timerLabel,
+    isRunning
+  } = useSelector((state) => state);
 
   // Handle timer ticking and switching between session and break
   useEffect(() => {
