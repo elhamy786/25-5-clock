@@ -1,0 +1,113 @@
+/* Background Gradient Animation */
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    animation: backgroundGradient 10s ease infinite;
+    background-size: 400% 400%;
+    color: #fff;
+    margin: 0;
+  }
+  
+  @keyframes backgroundGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Magical Timer Container */
+  #timer-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Timer Display */
+  #time-left {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    margin: 20px 0;
+  }
+  
+  /* Glowing Effect */
+  @keyframes glow {
+    0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+    100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
+  }
+  
+  #time-left {
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* Label Styles */
+  #timer-label, #break-label, #session-label {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 10px 0;
+  }
+  
+  /* Magical Buttons */
+  button {
+    background: linear-gradient(45deg, #ff6f61, #ff9478);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 5px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(255, 105, 135, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: background 0.5s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: linear-gradient(45deg, #ff9478, #ff6f61);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Session & Break Length Display */
+  #break-length, #session-length {
+    font-size: 28px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Button Hover Animations */
+  button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .name {
+    margin-top: 20px;
+    font-size: 20px;
+  }
