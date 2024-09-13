@@ -4,16 +4,26 @@ import { incrementSession, decrementSession } from '../redux/actions';
 
 const SessionControls = () => {
   const dispatch = useDispatch();
-  const sessionLength = useSelector(state => state.sessionLength); // Added parentheses around 'state'
+  const sessionLength = useSelector((state) => state.sessionLength); // Added parentheses
 
   return (
     <div>
       <h2 id="session-label">Session Length</h2>
-      <button id="session-decrement" onClick={() => dispatch(decrementSession())}>-</button>
-       {/* Added type="button" */}
+      <button 
+        id="session-decrement" 
+        type="button" // Added type="button"
+        onClick={() => dispatch(decrementSession())}
+      >
+        -
+      </button>
       <span id="session-length">{sessionLength}</span>
-      <button id="session-increment" onClick={() => dispatch(incrementSession())}>+</button>
-       {/* Added type="button" */}
+      <button 
+        id="session-increment" 
+        type="button" // Added type="button"
+        onClick={() => dispatch(incrementSession())}
+      >
+        +
+      </button>
     </div>
   );
 };
