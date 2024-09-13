@@ -52,7 +52,7 @@ const Timer = () => {
         Reset
       </button>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio id="beep" src="https://bigsoundbank.com/UPLOAD/mp3/0001.mp3" />
+      <audio id="beep" src="https://bigsoundbank.com/UPLOAD/mp3/0001.mp3"></audio>
     </div>
   );
 };

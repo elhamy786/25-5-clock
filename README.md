@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+#  🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project demonstrates a formula-based calculator that adheres to the order of operations and allows users to perform basic mathematical operations including addition, subtraction, multiplication, and division. It also supports decimal calculations and allows chaining multiple operations.📝
 
-## Available Scripts
+```javascript
+import React from 'react';
+import './App.css';
+import Calculator from './components/Calculator';
 
-In the project directory, you can run:
+const App = () => (
+  <div className="App">
+    <header className="App-header">
+      <Calculator />
+      <h1 className="name">Designed and Coded By Elhamy</h1>
+    </header>
+  </div>
+);
 
-### `npm start`
+export default App;
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo 📸
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Live Demo](https://deploy-preview-1--dynamic-pavlova-f760ae.netlify.app/)
 
-### `npm test`
+![Screenshot](./src/Screenshot%202024-09-13%20115223.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used 🛠️
 
-### `npm run build`
+- HTML
+- CSS
+- JavaScript
+- React
+- Node.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation 💻
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+1: Clone the Repository:
+git clone 
+```
 
-### `npm run eject`
+```bash
+2: Navigate to the Project Directory:
+cd 25+5-clock
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+3: Open the index.html , App.js , App.css and another Files in Your Browser.
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage 🎯
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repo to your local machine.
+# Install dependencies using npm install or yarn install.
+# Run the project with npm start or yarn start.
+# Write markdown and see the live preview instantly.
+# Customize the preview using CSS and build for production if needed.
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features ⭐
 
-## Learn More
+- Basic Arithmetic Operations: Calculator supports fundamental operations like addition, subtraction, multiplication, and division. It provides real-time calculations as the user inputs values and operators.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- esponsive Design: The calculator has a responsive layout, adjusting seamlessly across various device screen sizes, including mobile phones and desktops. The user interface remains user-friendly and intuitive on different platforms.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Clear and Backspace Functionality: Users can easily clear all inputs using a "Clear" button, or they can use the "Backspace" functionality to delete individual digits or operators, allowing for correction of mistakes without resetting the entire calculation.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author 👩‍💻
 
-### Analyzing the Bundle Size
+- [Linkedin](https://www.linkedin.com/in/elham-afzali-05326130b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+- [Email](elham.afzali1383@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing 🤝
+To contribute, submit bug reports, feature requests, or pull requests via the GitHub repository issues and pull requests tabs.
