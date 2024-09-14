@@ -1,29 +1,23 @@
-#  🚀
+# Pomodro Clock 🚀
 
-## This project demonstrates a formula-based calculator that adheres to the order of operations and allows users to perform basic mathematical operations including addition, subtraction, multiplication, and division. It also supports decimal calculations and allows chaining multiple operations.📝
+## The 25+5 clock is a time management tool used to enhance productivity through the Pomodoro Technique. It involves working for 25 minutes, followed by a 5-minute break. After completing four cycles, a longer break is taken. This method helps maintain focus and prevent burnout by breaking work into manageable intervals.📝
 
 ```javascript
-import React from 'react';
-import './App.css';
-import Calculator from './components/Calculator';
-
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <Calculator />
-      <h1 className="name">Designed and Coded By Elhamy</h1>
-    </header>
+  <div>
+    <BreakControls />
+    <SessionControls />
+    <Timer />
+    <h1 className="name">Designed and Coded By Elhamy</h1>
   </div>
 );
-
-export default App;
 ```
 
 ## Demo 📸
 
-[Live Demo](https://deploy-preview-1--dynamic-pavlova-f760ae.netlify.app/)
+[Live Demo](https://deploy-preview-1--monumental-raindrop-463986.netlify.app/)
 
-![Screenshot](./src/Screenshot%202024-09-13%20115223.png)
+![Screenshot](./src/Screenshot%202024-09-13%20224211.png)
 
 ## Technologies Used 🛠️
 
@@ -31,14 +25,12 @@ export default App;
 - CSS
 - JavaScript
 - React
-- Node.js
-
 
 ## Installation 💻
 
 ```bash
 1: Clone the Repository:
-git clone 
+git clone https://github.com/elhamy786/25-5-clock.git
 ```
 
 ```bash
@@ -62,11 +54,11 @@ cd 25+5-clock
 
 ## Features ⭐
 
-- Basic Arithmetic Operations: Calculator supports fundamental operations like addition, subtraction, multiplication, and division. It provides real-time calculations as the user inputs values and operators.
+- Pomodoro Timer: Automatically switches between a 25-minute work session and a 5-minute break to promote productivity.
 
-- esponsive Design: The calculator has a responsive layout, adjusting seamlessly across various device screen sizes, including mobile phones and desktops. The user interface remains user-friendly and intuitive on different platforms.
+- Session Tracking: Keeps track of completed work sessions, ensuring users follow the Pomodoro cycle effectively.
 
-- Clear and Backspace Functionality: Users can easily clear all inputs using a "Clear" button, or they can use the "Backspace" functionality to delete individual digits or operators, allowing for correction of mistakes without resetting the entire calculation.
+- Customizable Settings: Users can adjust the length of work and break periods to fit their preferences, allowing flexibility in time management.
 
 
 ## Author 👩‍💻
